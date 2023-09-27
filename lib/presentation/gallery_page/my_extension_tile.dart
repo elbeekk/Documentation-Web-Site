@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gstore_documentation/presentation/app_style.dart';
 
 class MyExtensionTile extends StatefulWidget {
   final List<String> imageList;

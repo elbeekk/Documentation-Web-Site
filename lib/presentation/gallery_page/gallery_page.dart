@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gstore_documentation/presentation/app_style.dart';
 import 'package:gstore_documentation/presentation/gallery_page/my_extension_tile.dart';
-import 'package:gstore_documentation/widgets/buttons.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class GalleryPage extends StatelessWidget {

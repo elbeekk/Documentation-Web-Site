@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gstore_documentation/presentation/gallery_page/gallery_page.dart';
 import 'package:gstore_documentation/presentation/preview_page/preview_page.dart';
-
 void main() {
   runApp(const MyApp());
 }

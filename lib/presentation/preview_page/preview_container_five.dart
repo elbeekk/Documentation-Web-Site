@@ -1,5 +1,4 @@
-import 'dart:html';
-
+import 'dart:ui_web';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -18,7 +17,7 @@ class PreviewContainerFive extends StatelessWidget {
     'assets/demo_screenshots/4.jpg',
     'assets/demo_screenshots/5.jpg',
     'assets/demo_screenshots/6.jpg',
-    'assets/demo_screenshots/7.jpeg',
+    'assets/demo_screenshots/7.jpg',
     'assets/demo_screenshots/8.jpg',
     'assets/demo_screenshots/9.jpg',
     'assets/demo_screenshots/10.jpg',
@@ -36,7 +35,9 @@ class PreviewContainerFive extends StatelessWidget {
     return SizedBox(
       child: Column(
         children: [
-          const SizedBox(height: 50,),
+          const SizedBox(
+            height: 50,
+          ),
           Text(
             'Demo Screenshots',
             style: AppStyle.urbanistBold(size: 25),
@@ -51,10 +52,7 @@ class PreviewContainerFive extends StatelessWidget {
               options: CarouselOptions(
                   autoPlay: true,
                   enableInfiniteScroll: true,
-                  enlargeCenterPage: true,
-                  height: 700,
-                  enlargeFactor: .00001,
-                  viewportFraction: .18,
+                  viewportFraction: 350/width,
                   autoPlayInterval: const Duration(seconds: 3),
                   autoPlayCurve: Curves.easeInOutSine),
               items: imgList
@@ -75,15 +73,17 @@ class PreviewContainerFive extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-           const MyElevatedButton(
-              iconData: Icons.image_outlined,
-              text: 'View Full Gallery',
-              buttonColor: Colors.orange,
-              textColor: Colors.white,
-              iconColor: Colors.white,
-             page: GalleryPage(),
+          const MyElevatedButton(
+            iconData: Icons.image_outlined,
+            text: 'View Full Gallery',
+            buttonColor: Colors.orange,
+            textColor: Colors.white,
+            iconColor: Colors.white,
+            page: GalleryPage(),
           ),
-          const SizedBox(height: 150,),
+          const SizedBox(
+            height: 150,
+          ),
           Container(
             width: width,
             height: 80,
@@ -95,34 +95,55 @@ class PreviewContainerFive extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Icon(Icons.copyright,color: Colors.white,),
-                      Text(' 2023 G Store - Design & Develop by Githubit',style:AppStyle.urbanistSemiBold(color: Colors.white,size: 15),),
+                      const Icon(
+                        Icons.copyright,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        ' 2023 G Store - Design & Develop by Githubit',
+                        style: AppStyle.urbanistSemiBold(
+                            color: Colors.white, size: 15),
+                      ),
                     ],
                   ),
                   Row(
                     children: [
                       IconButton(
                         onPressed: () {
-                          launch('https://www.youtube.com/@githubit1528/videos');
+                          launch(
+                              'https://www.youtube.com/@githubit1528/videos');
                         },
-                        icon: const Icon(MaterialCommunityIcons.youtube,color: Colors.white,),
-                      ),IconButton(
+                        icon: const Icon(
+                          MaterialCommunityIcons.youtube,
+                          color: Colors.white,
+                        ),
+                      ),
+                      IconButton(
                         onPressed: () {
                           launch('https://t.me/githubitnews');
                         },
-                        icon: const Icon(Icons.send,color: Colors.white,),
+                        icon: const Icon(
+                          Icons.send,
+                          color: Colors.white,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
                           launch('https://www.linkedin.com/company/githubit/');
                         },
-                        icon: const Icon(MaterialCommunityIcons.linkedin,color: Colors.white,),
+                        icon: const Icon(
+                          MaterialCommunityIcons.linkedin,
+                          color: Colors.white,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
                           launch('https://githubit.com/');
                         },
-                        icon: const Icon(MaterialCommunityIcons.web,color: Colors.white,),
+                        icon: const Icon(
+                          MaterialCommunityIcons.web,
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   )

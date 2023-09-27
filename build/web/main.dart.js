@@ -22313,7 +22313,7 @@ $1(a){var s=$.bF
 s=(s==null?$.bF=A.dZ(self.window.flutterConfiguration):s).b
 if(s==null)s=null
 else{s=s.canvasKitBaseUrl
-if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/b20183e04096094bcc37d9cde2a4b96f5cc684cf/":s)+a},
+if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/bd986c5ed20a62dc34b7718c50abc782beae4c33/":s)+a},
 $S:64}
 A.a96.prototype={
 $1(a){this.a.remove()
@@ -66087,18 +66087,16 @@ A.a6K.prototype={
 $1(a){return A.ab4(A.fH(7),A.CR(a,null,null))},
 $S:406}
 A.EI.prototype={
-L(a){var s,r,q,p,o,n,m=null,l=t.w
-A.bq(a,B.a_,l).toString
-s=A.bq(a,B.a_,l).w.a.a
-l=A.dA("Demo Screenshots",m,m,A.qW(B.an,25),m,m)
-r=this.c
-q=A.a4(r).h("a8<1,k1>")
-q=A.ai(new A.a8(r,new A.Z1(),q),!0,q.h("b1.E"))
-r=q.length
-p=$.a9
-o=s*0.08
-n=t.D
-return A.dr(A.fe(A.a([B.hR,l,B.hR,A.dr(new A.rc(new A.R5(700,0.18,!0,!0,B.jG,B.yE,!0,0.00001),q,new A.R4(new A.bd(new A.ag(p,t.wC),t.Fe)),r,m),700,s),B.hR,B.F9,B.IK,A.fi(m,new A.cl(new A.aE(o,0,o,0),A.eY(A.a([A.eY(A.a([B.Av,A.dA(" 2023 G Store - Design & Develop by Githubit",m,m,A.dT(B.h,15),m,m)],n),B.I,B.N,B.G),A.eY(A.a([A.CQ(m,B.AA,new A.Z2(),m,m),A.CQ(m,B.Aw,new A.Z3(),m,m),A.CQ(m,B.AB,new A.Z4(),m,m),A.CQ(m,B.Ax,new A.Z5(),m,m)],n),B.I,B.N,B.G)],n),B.I,B.Es,B.G),m),B.q,m,B.wd,80,m,m,s)],n),B.I,B.N,B.G),m,m)}}
+L(a){var s,r,q,p,o,n=null,m=t.w,l=A.bq(a,B.a_,m).w,k=A.bq(a,B.a_,m).w.a.a
+m=A.dA("Demo Screenshots",n,n,A.qW(B.an,25),n,n)
+s=this.c
+r=A.a4(s).h("a8<1,k1>")
+r=A.ai(new A.a8(s,new A.Z1(),r),!0,r.h("b1.E"))
+s=r.length
+q=$.a9
+p=k*0.08
+o=t.D
+return A.dr(A.fe(A.a([B.hR,m,B.hR,A.dr(new A.rc(new A.R5(l.a.b*0.7,k*1e-9,!0,!0,B.jG,B.yE,!0,k*1e-8),r,new A.R4(new A.bd(new A.ag(q,t.wC),t.Fe)),s,n),700,k),B.hR,B.F9,B.IK,A.fi(n,new A.cl(new A.aE(p,0,p,0),A.eY(A.a([A.eY(A.a([B.Av,A.dA(" 2023 G Store - Design & Develop by Githubit",n,n,A.dT(B.h,15),n,n)],o),B.I,B.N,B.G),A.eY(A.a([A.CQ(n,B.AA,new A.Z2(),n,n),A.CQ(n,B.Aw,new A.Z3(),n,n),A.CQ(n,B.AB,new A.Z4(),n,n),A.CQ(n,B.Ax,new A.Z5(),n,n)],o),B.I,B.N,B.G)],o),B.I,B.Es,B.G),n),B.q,n,B.wd,80,n,n,k)],o),B.I,B.N,B.G),n,n)}}
 A.Z1.prototype={
 $1(a){return A.iO(A.ab4(A.fH(7),A.CR(a,B.we,300)),null,null)},
 $S:407}

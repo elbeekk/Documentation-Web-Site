@@ -13,6 +13,7 @@ class GalleryPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.grey.shade100,
         elevation: 0,
         title: GradientText(

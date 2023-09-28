@@ -21,6 +21,7 @@ class PreviewContainerOne extends StatelessWidget {
         child: Column(
           children: [
             AppBar(
+              automaticallyImplyLeading: false,
               backgroundColor: Colors.transparent,
               title: Padding(
                 padding: EdgeInsets.only(left: width * .07),

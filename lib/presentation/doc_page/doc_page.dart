@@ -19,13 +19,14 @@ class _DocPageState extends State<DocPage> {
   int currentIndex = 0;
   PageController controller = PageController(initialPage: 0);
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  List<double> heights = [500, 3000, 1500, 800];
+  List<double> heights = [900, 3000, 1500,900];
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
     final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      extendBodyBehindAppBar: false,
       key: _scaffoldKey,
       drawerScrimColor: Colors.black,
       drawer: width < 700
@@ -46,6 +47,7 @@ class _DocPageState extends State<DocPage> {
                         color: Colors.black,
                         text: 'Preview',
                         page: PreviewPage(),
+
                       ),
                       MyMouseRegionButton(
                         color: Colors.black,
@@ -57,24 +59,28 @@ class _DocPageState extends State<DocPage> {
                         text: 'Requirements',
                         controller: controller,
                         scaffoldKey: _scaffoldKey,
+                        isSelected: currentIndex==0,
                       ),
                       MyMouseRegionButton(
                         color: Colors.black,
                         text: 'Installation',
                         controller: controller,
                         scaffoldKey: _scaffoldKey,
+                        isSelected: currentIndex==1,
                       ),
                       MyMouseRegionButton(
                         color: Colors.black,
                         text: 'Customization',
                         controller: controller,
                         scaffoldKey: _scaffoldKey,
+                        isSelected: currentIndex==2,
                       ),
                       MyMouseRegionButton(
                         color: Colors.black,
                         controller: controller,
                         text: 'App build & release',
                         scaffoldKey: _scaffoldKey,
+                        isSelected: currentIndex==3,
                       ),
                     ],
                   ),
@@ -139,21 +145,28 @@ class _DocPageState extends State<DocPage> {
                             color: Colors.black,
                             text: 'Requirements',
                             controller: controller,
+                            isSelected: currentIndex==0,
                           ),
                           MyMouseRegionButton(
                             color: Colors.black,
                             text: 'Installation',
                             controller: controller,
+                            isSelected: currentIndex==1,
+
                           ),
                           MyMouseRegionButton(
                             color: Colors.black,
                             text: 'Customization',
                             controller: controller,
+                            isSelected: currentIndex==2,
+
                           ),
                           MyMouseRegionButton(
                             color: Colors.black,
                             controller: controller,
                             text: 'App build & release',
+                            isSelected: currentIndex==3,
+
                           ),
                         ],
                       ),
@@ -172,6 +185,7 @@ class _DocPageState extends State<DocPage> {
                   setState(() {
                     currentIndex = value;
                   });
+                  print(currentIndex);
                 },
                 physics: NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,

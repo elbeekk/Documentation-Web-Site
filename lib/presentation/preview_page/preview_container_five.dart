@@ -126,6 +126,15 @@ class PreviewContainerFive extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () {
+                        launch('https://www.facebook.com/githubit');
+                      },
+                      icon: const Icon(
+                        MaterialCommunityIcons.facebook,
+                        color: Colors.white,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {
                         launch('https://t.me/githubitnews');
                       },
                       icon: const Icon(

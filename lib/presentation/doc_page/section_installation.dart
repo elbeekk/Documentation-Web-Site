@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gstore_documentation/presentation/app_style.dart';
@@ -759,47 +760,36 @@ class _SectionInstallationState extends State<SectionInstallation> {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '<meta-data android:name="com.google.android.geo.API_KEY"',
-                              style: TextStyle(color: Colors.grey),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Wrap(
+                        alignment: WrapAlignment.spaceBetween,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          Text('<meta-data android:name="com.google.android.geo.API_KEY" android:value=“YOUR_MAP_API_KEY_HERE”/>',style: TextStyle(color: Colors.grey,height: 2),),
+                          IconButton(
+                            icon: Icon(
+                              Icons.copy,
+                              color: Colors.grey,
                             ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              'android:value=“YOUR_MAP_API_KEY_HERE”/>',
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                          ],
-                        ),
-                        IconButton(
-                          icon: Icon(
-                            Icons.copy,
-                            color: Colors.grey,
-                          ),
-                          onPressed: ()async {
-                            await Clipboard.setData(ClipboardData(text: '<meta-data android:name="com.google.android.geo.API_KEY" android:value=“YOUR_MAP_API_KEY_HERE”/>'),).whenComplete(() => fToast?.showToast(
-                                child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 10),
-                                    decoration: BoxDecoration(
-                                        color: Colors.blueGrey.shade900,
-                                        borderRadius:
-                                        BorderRadius.circular(5)),
-                                    child: Text(
-                                      'Text copied to ClipBoard',
-                                      style: TextStyle(color: Colors.white),
-                                    )),
-                                gravity: ToastGravity.BOTTOM_RIGHT));
-                          },
-                        )
-                      ],
+                            onPressed: ()async {
+                              await Clipboard.setData(ClipboardData(text: '<meta-data android:name="com.google.android.geo.API_KEY" android:value=“YOUR_MAP_API_KEY_HERE”/>'),).whenComplete(() => fToast?.showToast(
+                                  child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 10),
+                                      decoration: BoxDecoration(
+                                          color: Colors.blueGrey.shade900,
+                                          borderRadius:
+                                          BorderRadius.circular(5)),
+                                      child: Text(
+                                        'Text copied to ClipBoard',
+                                        style: TextStyle(color: Colors.white),
+                                      )),
+                                  gravity: ToastGravity.BOTTOM_RIGHT));
+                            },
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -853,35 +843,39 @@ class _SectionInstallationState extends State<SectionInstallation> {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'GMSServices.provideAPIKey(“YOUR_MAP_API_KEY_HERE")',
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                        IconButton(
-                          icon: Icon(
-                            Icons.copy,
-                            color: Colors.grey,
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Wrap(
+                        alignment: WrapAlignment.spaceBetween,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          Text(
+                            'GMSServices.provideAPIKey(“YOUR_MAP_API_KEY_HERE")',
+                            style: TextStyle(color: Colors.grey),
                           ),
-                          onPressed: ()async {
-                            await Clipboard.setData(ClipboardData(text: 'GMSServices.provideAPIKey(“YOUR_MAP_API_KEY_HERE")'),).whenComplete(() => fToast?.showToast(
-                                child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 10),
-                                    decoration: BoxDecoration(
-                                        color: Colors.blueGrey.shade900,
-                                        borderRadius:
-                                        BorderRadius.circular(5)),
-                                    child: Text(
-                                      'Text copied to ClipBoard',
-                                      style: TextStyle(color: Colors.white),
-                                    )),
-                                gravity: ToastGravity.BOTTOM_RIGHT));
-                          },
-                        )
-                      ],
+                          IconButton(
+                            icon: Icon(
+                              Icons.copy,
+                              color: Colors.grey,
+                            ),
+                            onPressed: ()async {
+                              await Clipboard.setData(ClipboardData(text: 'GMSServices.provideAPIKey(“YOUR_MAP_API_KEY_HERE")'),).whenComplete(() => fToast?.showToast(
+                                  child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 10),
+                                      decoration: BoxDecoration(
+                                          color: Colors.blueGrey.shade900,
+                                          borderRadius:
+                                          BorderRadius.circular(5)),
+                                      child: Text(
+                                        'Text copied to ClipBoard',
+                                        style: TextStyle(color: Colors.white),
+                                      )),
+                                  gravity: ToastGravity.BOTTOM_RIGHT));
+                            },
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -890,7 +884,84 @@ class _SectionInstallationState extends State<SectionInstallation> {
             SizedBox(
               height: 20,
             ),
-            SizedBox(height: 200,)
+            SizedBox(height: 100,),
+            Container(
+              height: 80,
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(vertical: 20,),
+              child: Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  Wrap(
+                    alignment: WrapAlignment.start,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.copyright,
+                        color: Colors.black,
+                      ),
+                      Text(
+                        ' 2023 G Store - Design & Develop by Githubit',
+                        style: AppStyle.urbanistSemiBold(
+                            color: Colors.black, size: 15),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          launch(
+                              'https://www.youtube.com/@githubit1528/videos');
+                        },
+                        icon: const Icon(
+                          MaterialCommunityIcons.youtube,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          launch('https://www.facebook.com/githubit');
+                        },
+                        icon: const Icon(
+                          MaterialCommunityIcons.facebook,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          launch('https://t.me/githubitnews');
+                        },
+                        icon: const Icon(
+                          Icons.send,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          launch('https://www.linkedin.com/company/githubit/');
+                        },
+                        icon: const Icon(
+                          MaterialCommunityIcons.linkedin,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          launch('https://githubit.com/');
+                        },
+                        icon: const Icon(
+                          MaterialCommunityIcons.web,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

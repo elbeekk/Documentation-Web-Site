@@ -7,8 +7,9 @@ class MyMouseRegionButton extends StatefulWidget {
   final Widget? page;
   final PageController? controller;
   final scaffoldKey;
+  final bool? isSelected;
   MyMouseRegionButton(
-      {super.key, required this.color, required this.text, this.page, this.controller, this.scaffoldKey});
+      {super.key, required this.color, required this.text, this.page, this.controller, this.scaffoldKey,this.isSelected});
 
   @override
   State<MyMouseRegionButton> createState() => _MyMouseRegionButtonState();
@@ -27,6 +28,7 @@ class _MyMouseRegionButtonState extends State<MyMouseRegionButton> {
         setState(() {
           widget.color = Colors.black;
         });
+
       },
       child: InkWell(
         focusColor: Colors.greenAccent,
@@ -40,6 +42,7 @@ class _MyMouseRegionButtonState extends State<MyMouseRegionButton> {
           }else{
               if(widget.text=='Requirements') {
                 widget.controller!.jumpToPage(0);
+
               }
               if(widget.text=='Installation') {
                 widget.controller!.jumpToPage(1);
@@ -50,7 +53,7 @@ class _MyMouseRegionButtonState extends State<MyMouseRegionButton> {
               if(widget.text=='App build & release') {
                 widget.controller!.jumpToPage(3);
               }
-              widget.scaffoldKey.currentState.closeDrawer();
+              widget.scaffoldKey?.currentState.closeDrawer();
           }
         },
         borderRadius: BorderRadius.circular(5),
@@ -63,12 +66,14 @@ class _MyMouseRegionButtonState extends State<MyMouseRegionButton> {
               ),
               Text(
                 widget.text,
-                style: GoogleFonts.dmSans(color: widget.color, fontSize: 17,fontWeight: FontWeight.w500),
+                style: GoogleFonts.dmSans(color: widget.isSelected!=null? widget.isSelected! ?  Color(0xff59c05d):widget.color: widget.color, fontSize: 17,fontWeight: FontWeight.w500),
               ),
+              
             ],
           ),
         ),
       ),
     );
   }
+
 }

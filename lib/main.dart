@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gstore_documentation/presentation/doc_page/doc_page.dart';
+import 'package:gstore_documentation/presentation/preview_page/preview_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       title: 'gStore',
-      home: DocPage(),
+      home: PreviewPage(),
     );
   }
 }

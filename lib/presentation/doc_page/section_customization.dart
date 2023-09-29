@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gstore_documentation/presentation/app_style.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SectionCustomization extends StatelessWidget {
   SectionCustomization({super.key});
@@ -164,7 +166,84 @@ class SectionCustomization extends StatelessWidget {
             ),
             SizedBox(
               height: 200,
-            )
+            ),
+            Container(
+              height: 80,
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(vertical: 20,),
+              child: Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  Wrap(
+                    alignment: WrapAlignment.start,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.copyright,
+                        color: Colors.black,
+                      ),
+                      Text(
+                        ' 2023 G Store - Design & Develop by Githubit',
+                        style: AppStyle.urbanistSemiBold(
+                            color: Colors.black, size: 15),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          launch(
+                              'https://www.youtube.com/@githubit1528/videos');
+                        },
+                        icon: const Icon(
+                          MaterialCommunityIcons.youtube,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          launch('https://www.facebook.com/githubit');
+                        },
+                        icon: const Icon(
+                          MaterialCommunityIcons.facebook,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          launch('https://t.me/githubitnews');
+                        },
+                        icon: const Icon(
+                          Icons.send,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          launch('https://www.linkedin.com/company/githubit/');
+                        },
+                        icon: const Icon(
+                          MaterialCommunityIcons.linkedin,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          launch('https://githubit.com/');
+                        },
+                        icon: const Icon(
+                          MaterialCommunityIcons.web,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

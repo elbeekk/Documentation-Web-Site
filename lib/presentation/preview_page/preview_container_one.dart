@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:gstore_documentation/presentation/app_style.dart';
+import 'package:gstore_documentation/presentation/doc_page/doc_page.dart';
 import 'package:gstore_documentation/presentation/gallery_page/gallery_page.dart';
 import 'package:gstore_documentation/widgets/buttons.dart';
 import 'package:gstore_documentation/widgets/image_button.dart';
@@ -47,7 +48,9 @@ class PreviewContainerOne extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           elevation: 0, backgroundColor: const Color(0xffFF981F)),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DocPage(),));
+                      },
                       child:  Center(
                         child: Text('Go To Docs',style: AppStyle.urbanistMedium(color: Colors.white),),
                       )),
@@ -87,10 +90,12 @@ class PreviewContainerOne extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+            SizedBox(
+              width: width,
+              child: Wrap(
+                runSpacing:10,
+                alignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   const MyElevatedButton(
                       iconData: Icons.shopping_cart_outlined,
@@ -139,7 +144,9 @@ class PreviewContainerOne extends StatelessWidget {
             ),
             const SizedBox(height: 20,),
             RichText(
+              textAlign: TextAlign.center,
               text: TextSpan(
+
                 text: 'Flutter 3.10 ',
                 style:
                     AppStyle.urbanistSemiBold(color: Colors.redAccent, size: 30),
@@ -153,8 +160,10 @@ class PreviewContainerOne extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20,),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            const Wrap(
+              alignment: WrapAlignment.center,
+              runSpacing: 10,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 MyImageButton(logoName: 'flutter.png',url: 'https://flutter.dev/',),
                 MyImageButton(logoName: 'android.png',url: 'https://www.android.com/',),

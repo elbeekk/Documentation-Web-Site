@@ -12,6 +12,7 @@ class MyInfoRow extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             height: 33,

@@ -20,7 +20,7 @@ class _MyExtensionTileState extends State<MyExtensionTile> {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * 0.2,),
+          padding: EdgeInsets.symmetric(horizontal: width * 0.11,),
           child: ExpansionTile(
             collapsedBackgroundColor: Colors.orange,
             collapsedIconColor: Colors.white,
@@ -47,8 +47,8 @@ class _MyExtensionTileState extends State<MyExtensionTile> {
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 4,
+                        SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: width>1000?4:width>750?3: width>500?2:1,
                             crossAxisSpacing: 50,
                             mainAxisSpacing: 50,
                             childAspectRatio: .486),

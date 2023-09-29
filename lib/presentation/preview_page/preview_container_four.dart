@@ -17,9 +17,9 @@ class PreviewContainerFour extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text('Build your Android and iOS (Flutter) Apps Today',style: AppStyle.urbanistBold(size:30 ),),
+          Text('Build your Android and iOS (Flutter) Apps Today',textAlign: TextAlign.center,style: AppStyle.urbanistBold(size:30 ),),
           const SizedBox(height: 15,),
-          Text('Purchase G Store to get a Beautiful & Biggest UI Kit',style: AppStyle.urbanistSemiBold(size: 16,color: Colors.grey.shade700),),
+          Text('Purchase G Store to get a Beautiful & Biggest UI Kit',textAlign: TextAlign.center,style: AppStyle.urbanistSemiBold(size: 16,color: Colors.grey.shade700),),
           const SizedBox(height: 30,),
           const MyElevatedButton(
               iconData: Icons.shopping_bag_outlined,

@@ -17,7 +17,7 @@ class MyInfoNullButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 22),
+      padding: const EdgeInsets.only(bottom: 22,left: 15,right: 15),
       child: OutlinedButton.icon(
         onPressed: null,
         style: OutlinedButton.styleFrom(
@@ -31,12 +31,12 @@ class MyInfoNullButton extends StatelessWidget {
               iconData,
               color: iconColor,
             )),
-        label: SizedBox(
+        label: Container(
           height: 100,
           width: 350,
           child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+            child: Wrap(
+              alignment: WrapAlignment.start,
               children: [
                 const SizedBox(width: 10,),
                 Text(

@@ -49,10 +49,13 @@ class PreviewContainerFive extends StatelessWidget {
             height: 700,
             width: width,
             child: CarouselSlider(
+
               options: CarouselOptions(
                   autoPlay: true,
                   enableInfiniteScroll: true,
                   viewportFraction: 350/width,
+                  clipBehavior: Clip.antiAlias,
+                  height: 700,
                   autoPlayInterval: const Duration(seconds: 3),
                   autoPlayCurve: Curves.easeInOutSine),
               items: imgList
@@ -85,72 +88,74 @@ class PreviewContainerFive extends StatelessWidget {
             height: 150,
           ),
           Container(
-            width: width,
             height: 80,
             decoration: const BoxDecoration(color: Colors.orange),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: width * 0.08),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.copyright,
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(vertical: 20,horizontal: width*.1),
+            child: Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                Wrap(
+                  alignment: WrapAlignment.start,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.copyright,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      ' 2023 G Store - Design & Develop by Githubit',
+                      style: AppStyle.urbanistSemiBold(
+                          color: Colors.white, size: 15),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        launch(
+                            'https://www.youtube.com/@githubit1528/videos');
+                      },
+                      icon: const Icon(
+                        MaterialCommunityIcons.youtube,
                         color: Colors.white,
                       ),
-                      Text(
-                        ' 2023 G Store - Design & Develop by Githubit',
-                        style: AppStyle.urbanistSemiBold(
-                            color: Colors.white, size: 15),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        launch('https://t.me/githubitnews');
+                      },
+                      icon: const Icon(
+                        Icons.send,
+                        color: Colors.white,
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          launch(
-                              'https://www.youtube.com/@githubit1528/videos');
-                        },
-                        icon: const Icon(
-                          MaterialCommunityIcons.youtube,
-                          color: Colors.white,
-                        ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        launch('https://www.linkedin.com/company/githubit/');
+                      },
+                      icon: const Icon(
+                        MaterialCommunityIcons.linkedin,
+                        color: Colors.white,
                       ),
-                      IconButton(
-                        onPressed: () {
-                          launch('https://t.me/githubitnews');
-                        },
-                        icon: const Icon(
-                          Icons.send,
-                          color: Colors.white,
-                        ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        launch('https://githubit.com/');
+                      },
+                      icon: const Icon(
+                        MaterialCommunityIcons.web,
+                        color: Colors.white,
                       ),
-                      IconButton(
-                        onPressed: () {
-                          launch('https://www.linkedin.com/company/githubit/');
-                        },
-                        icon: const Icon(
-                          MaterialCommunityIcons.linkedin,
-                          color: Colors.white,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          launch('https://githubit.com/');
-                        },
-                        icon: const Icon(
-                          MaterialCommunityIcons.web,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
+                    ),
+                  ],
+                )
+              ],
             ),
-          )
+          ),
         ],
       ),
     );

@@ -6,8 +6,9 @@ class MyMouseRegionButton extends StatefulWidget {
   final String text;
   final Widget? page;
   final PageController? controller;
+  final scaffoldKey;
   MyMouseRegionButton(
-      {super.key, required this.color, required this.text, this.page, this.controller});
+      {super.key, required this.color, required this.text, this.page, this.controller, this.scaffoldKey});
 
   @override
   State<MyMouseRegionButton> createState() => _MyMouseRegionButtonState();
@@ -49,6 +50,7 @@ class _MyMouseRegionButtonState extends State<MyMouseRegionButton> {
               if(widget.text=='App build & release') {
                 widget.controller!.jumpToPage(3);
               }
+              widget.scaffoldKey.currentState.closeDrawer();
           }
         },
         borderRadius: BorderRadius.circular(5),

@@ -20,8 +20,11 @@ class PreviewPage extends StatelessWidget {
         child: Column(
           children: [
             const PreviewContainerOne(),
+            SizedBox(height: 100,),
             const PreviewContainerTwo(),
+            SizedBox(height: 150,),
             const PreviewContainerThree(),
+            SizedBox(height: 100,),
             const PreviewContainerFour(),
             PreviewContainerFive()
           ],

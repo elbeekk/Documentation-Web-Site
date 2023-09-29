@@ -17,19 +17,90 @@ class DocPage extends StatefulWidget {
 
 class _DocPageState extends State<DocPage> {
   int currentIndex = 0;
-  PageController controller = PageController(initialPage: 1);
+  PageController controller = PageController(initialPage: 0);
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  List<double> heights = [500, 3000, 1500, 800];
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
     final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      key: _scaffoldKey,
+      drawerScrimColor: Colors.black,
+      drawer: width < 700
+          ? Drawer(
+              width: 250,
+              child: Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Row(),
+                      SizedBox(
+                        height: 100,
+                      ),
+                      MyMouseRegionButton(
+                        color: Colors.black,
+                        text: 'Preview',
+                        page: PreviewPage(),
+                      ),
+                      MyMouseRegionButton(
+                        color: Colors.black,
+                        text: 'Gallery',
+                        page: GalleryPage(),
+                      ),
+                      MyMouseRegionButton(
+                        color: Colors.black,
+                        text: 'Requirements',
+                        controller: controller,
+                        scaffoldKey: _scaffoldKey,
+                      ),
+                      MyMouseRegionButton(
+                        color: Colors.black,
+                        text: 'Installation',
+                        controller: controller,
+                        scaffoldKey: _scaffoldKey,
+                      ),
+                      MyMouseRegionButton(
+                        color: Colors.black,
+                        text: 'Customization',
+                        controller: controller,
+                        scaffoldKey: _scaffoldKey,
+                      ),
+                      MyMouseRegionButton(
+                        color: Colors.black,
+                        controller: controller,
+                        text: 'App build & release',
+                        scaffoldKey: _scaffoldKey,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
+          : null,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: width < 700
+            ? IconButton(
+                onPressed: () {
+                  _scaffoldKey.currentState!.openDrawer();
+                },
+                icon: Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                ))
+            : null,
         elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.grey.shade100,
         toolbarHeight: 120,
         title: Padding(
           padding: EdgeInsets.only(
-            left: width * 0.1,
+            left: width > 700 ? width * 0.1 : 00,
           ),
           child: Text(
             'Githubit',
@@ -45,61 +116,64 @@ class _DocPageState extends State<DocPage> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.only(left: width * .11),
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    MyMouseRegionButton(
-                      color: Colors.black,
-                      text: 'Preview',
-                      page: PreviewPage(),
+            width > 700
+                ? Padding(
+                    padding: EdgeInsets.only(left: width * .11),
+                    child: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(),
+                          MyMouseRegionButton(
+                            color: Colors.black,
+                            text: 'Preview',
+                            page: PreviewPage(),
+                          ),
+                          MyMouseRegionButton(
+                            color: Colors.black,
+                            text: 'Gallery',
+                            page: GalleryPage(),
+                          ),
+                          MyMouseRegionButton(
+                            color: Colors.black,
+                            text: 'Requirements',
+                            controller: controller,
+                          ),
+                          MyMouseRegionButton(
+                            color: Colors.black,
+                            text: 'Installation',
+                            controller: controller,
+                          ),
+                          MyMouseRegionButton(
+                            color: Colors.black,
+                            text: 'Customization',
+                            controller: controller,
+                          ),
+                          MyMouseRegionButton(
+                            color: Colors.black,
+                            controller: controller,
+                            text: 'App build & release',
+                          ),
+                        ],
+                      ),
                     ),
-                    MyMouseRegionButton(
-                      color: Colors.black,
-                      text: 'Gallery',
-                      page: GalleryPage(),
-                    ),
-                    MyMouseRegionButton(
-                      color: Colors.black,
-                      text: 'Requirements',
-                      controller: controller,
-                    ),
-                    MyMouseRegionButton(
-                      color: Colors.black,
-                      text: 'Installation',
-                      controller: controller,
-                    ),
-                    MyMouseRegionButton(
-                      color: Colors.black,
-                      text: 'Customization',
-                      controller: controller,
-                    ),
-                    MyMouseRegionButton(
-                      color: Colors.black,
-                      controller: controller,
-                      text: 'App build & release',
-                    ),
-                  ],
-                ),
-              ),
-            ),
+                  )
+                : Text(''),
             SizedBox(
               width: width * .05,
             ),
             SizedBox(
-              width: width * 0.6,
-              height: 3500,
+              width: width < 700 ? width * .9 : width * .6,
+              height: heights[currentIndex],
               child: PageView(
-                clipBehavior: Clip.none,
+                clipBehavior: Clip.antiAlias,
                 onPageChanged: (value) {
                   setState(() {
-                    currentIndex=value;
+                    currentIndex = value;
                   });
-                  },
-                physics:NeverScrollableScrollPhysics(),
+                },
+                physics: NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 controller: controller,
                 children: [

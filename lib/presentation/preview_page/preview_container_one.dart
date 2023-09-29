@@ -6,6 +6,7 @@ import 'package:gstore_documentation/presentation/gallery_page/gallery_page.dart
 import 'package:gstore_documentation/widgets/buttons.dart';
 import 'package:gstore_documentation/widgets/image_button.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PreviewContainerOne extends StatelessWidget {
   const PreviewContainerOne({super.key});
@@ -122,11 +123,16 @@ class PreviewContainerOne extends StatelessWidget {
                       text: 'On Play Store',
                       buttonColor: Color(0xffFF981F),
                       textColor: Colors.white,
-                      iconColor: Colors.white),
+                      iconColor: Colors.white,
+                    link: "https://play.google.com/store/apps/details?id=org.gstore",
+
+                  ),
                   const SizedBox(width: 10,),
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.orange,padding: const EdgeInsets.all(12.5)),
-                    onPressed: () {},
+                    onPressed: () {
+                      launch('https://testflight.apple.com/join/OshBaDRr');
+                    },
                     label: const Text('Test Flight'),
                     icon: Container(
                       height: 30,

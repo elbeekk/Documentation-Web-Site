@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyElevatedButton extends StatelessWidget {
   final IconData iconData;
@@ -7,13 +8,14 @@ class MyElevatedButton extends StatelessWidget {
   final Color textColor;
   final Color iconColor;
   final Widget? page;
+  final String? link;
 
   const MyElevatedButton({super.key,
     required this.iconData,
     required this.text,
     required this.buttonColor,
     required this.textColor,
-    required this.iconColor, this.page,
+    required this.iconColor, this.page, this.link,
   });
 
   @override
@@ -26,6 +28,10 @@ class MyElevatedButton extends StatelessWidget {
           if(page!=null){
             Navigator.push(context, MaterialPageRoute(builder: (context) => page!,));
           }
+          if(link!=null){
+            launch(link!);
+          }
+
         },
         icon: Icon(iconData,color: iconColor,),
         label: Padding(
